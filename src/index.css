@@ -6,3 +6,10 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.active {
+  color: white;
+  background-image: linear-gradient(to right, #632ee3, #9f62f2);
+  padding: 7px;
+  border-radius: 5%;
+}

@@ -1,3 +1,9 @@
+import ErrorPage from "./pages/ErrorPage";
+
 export default function App() {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <ErrorPage />
+    </div>
+  );
 }

@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p className='text-center text-sm'>
+      <p className='text-center text-sm mt-4'>
         Copyright Hero.io &copy; {date.getFullYear()} - All right reserved
       </p>
     </footer>

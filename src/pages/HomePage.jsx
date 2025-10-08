@@ -5,6 +5,7 @@ import AppOverview from "../components/AppOverview";
 import Button from "./../components/Button";
 export default function HomePage() {
   const data = useLoaderData();
+  console.log(data);
   const sortedData = data.sort((a, b) => b.ratingAvg - a.ratingAvg);
   const trendingApps = sortedData.slice(0, 12);
   console.log(trendingApps);
@@ -23,8 +24,10 @@ export default function HomePage() {
       </section>
 
       <section className='mt-20 px-7 md:px-15 lg:px-20 text-center'>
-        <h1 className='text-5xl font-bold text-black'>Trending Apps</h1>
-        <p className='text-xl mt-4 text-gray-400'>
+        <h1 className='text-3xl md:text-5xl font-bold text-black'>
+          Trending Apps
+        </h1>
+        <p className='md:text-xl text-sm mt-4 text-gray-400'>
           Explore All Trending Apps on the Market developed by us
         </p>
         <div className='mt-10 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4'>

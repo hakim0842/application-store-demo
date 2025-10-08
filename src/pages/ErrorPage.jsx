@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import ErrorImage from "./../assets/error-404.png";
 import { TiArrowBackOutline } from "react-icons/ti";
 import NavBar from "./../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function ErrorPage() {
   const navigate = useNavigate();
@@ -11,9 +12,9 @@ export default function ErrorPage() {
     navigate("/");
   }
   return (
-    <>
+    <div className='bg-white text-black max-w-[1440px] mx-auto'>
       <NavBar />
-      <div className='flex justify-center items-center h-screen'>
+      <div className='flex justify-center items-center h-screen bg-gray-100'>
         <div className='flex flex-col justify-center items-center p-2'>
           <img src={ErrorImage} alt='Error image' />
           <h1 className='font-semibold text-2xl md:text-3xl xl:text-5xl lg:text-4xl mt-4'>
@@ -30,6 +31,7 @@ export default function ErrorPage() {
           </Button>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }

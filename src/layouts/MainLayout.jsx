@@ -1,6 +1,7 @@
 import { Outlet, useNavigation } from "react-router";
 import NavBar from "../components/NavBar";
 import Loader from "../components/Loader";
+import Footer from "../components/Footer";
 
 export default function MainLayout() {
   const navigation = useNavigation();
@@ -10,6 +11,7 @@ export default function MainLayout() {
       <NavBar />
       {isLoading && <Loader />}
       <Outlet />
+      <Footer />
     </main>
   );
 }

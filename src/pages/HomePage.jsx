@@ -27,7 +27,7 @@ export default function HomePage() {
         <p className='text-xl mt-4 text-gray-400'>
           Explore All Trending Apps on the Market developed by us
         </p>
-        <div className='mt-10 grid grid-cols-4 gap-4'>
+        <div className='mt-10 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4'>
           {trendingApps.map((app) => (
             <AppOverview key={app.id} {...app} />
           ))}

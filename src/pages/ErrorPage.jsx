@@ -12,6 +12,7 @@ export default function ErrorPage() {
   }
   return (
     <>
+      <NavBar />
       <div className='flex justify-center items-center h-screen'>
         <div className='flex flex-col justify-center items-center p-2'>
           <img src={ErrorImage} alt='Error image' />

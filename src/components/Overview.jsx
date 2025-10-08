@@ -2,7 +2,7 @@ import OverviewItem from "./OverviewItem";
 
 export default function Overview() {
   return (
-    <div className='p-5 md:p-7 lg:p-15 xl:p-20 bg-gradient text-center'>
+    <div className='p-5 md:p-7 lg:p-15 xl:p-20 bg-gradient text-center text-white'>
       <h1 className='text-2xl md:text-3xl lg:text-5xl'>
         Trusted by Millions, Built for You
       </h1>

@@ -6,7 +6,7 @@ export default function MainLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   return (
-    <main className='max-w-[1440px] mx-auto'>
+    <main className='max-w-[1440px] mx-auto bg-gray-100 text-black h-screen'>
       <NavBar />
       {isLoading && <Loader />}
       <Outlet />

@@ -4,14 +4,17 @@ import ErrorPage from "./pages/ErrorPage";
 import AppPage from "./pages/AppPage";
 import HomePage from "./pages/HomePage";
 import InstallationPage from "./pages/InstallationPage";
-import Loader from "./components/Loader";
 import { homeLoader } from "./services/loader";
+import Loader from "./components/Loader";
 
 export default function App() {
   const router = createBrowserRouter([
     {
       element: <MainLayout />,
       errorElement: <ErrorPage />,
+      HydrateFallback: () => {
+        <Loader />;
+      },
 
       children: [
         { index: true, element: <HomePage />, loader: homeLoader },

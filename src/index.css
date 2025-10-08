@@ -32,3 +32,48 @@ body {
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+.loader {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.733),
+    rgba(255, 166, 0, 0.808),
+    yellow,
+    rgba(0, 128, 0, 0.767),
+    rgba(0, 0, 255, 0.664),
+    indigo,
+    violet
+  );
+  background-size: 200% 200%;
+  animation: slideGradient 1s linear infinite alternate;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes slideGradient {
+  0% {
+    background-position: 0% 25%;
+  }
+  50% {
+    background-position: 25% 50%;
+  }
+  100% {
+    background-position: 100% 25%;
+  }
+}

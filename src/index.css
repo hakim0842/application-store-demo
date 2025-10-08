@@ -13,3 +13,7 @@ body {
   padding: 7px;
   border-radius: 5%;
 }
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #632ee3, #9f62f2);
+}

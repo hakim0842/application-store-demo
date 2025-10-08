@@ -12,7 +12,7 @@ export default function Hero() {
         <span>We Build</span>
         <br />
         <span>
-          <span className=''>Productive</span>
+          <span className='gradient-text'>Productive </span>
           Apps
         </span>
       </h1>

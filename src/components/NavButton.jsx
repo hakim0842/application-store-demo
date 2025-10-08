@@ -5,7 +5,7 @@ export default function NavButton() {
   return (
     <Button>
       <a
-        className='flex flex-row w-full gap-2 justify-center items-center h-full my-auto'
+        className='flex flex-row w-full gap-2 items-center justify-center'
         href={githubLink}
         target='_blank'
       >

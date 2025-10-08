@@ -2,7 +2,7 @@ export default function Button({ children, ...props }) {
   return (
     <button
       {...props}
-      className='mt-4 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-gradient'
+      className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-gradient flex items-center justify-center'
     >
       {children}
     </button>

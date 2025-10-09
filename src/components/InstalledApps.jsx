@@ -3,12 +3,16 @@ import { TiStar } from "react-icons/ti";
 import ReactIconWithText from "./ReactIconWithText";
 export default function InstalledApps() {
   return (
-    <div className='flex flex-row justify-between mt-4 bg-white p-4 items-center'>
+    <div className='flex flex-row justify-between mt-4 bg-white p-2 md:p-4 items-center'>
       <div className='flex flex-row gap-5'>
-        <img className='h-20 w-20' src='./../assets/hero.png' alt='' />
+        <img
+          className='w-6 h-6 md:w-8 md:h-8 lg:h-20 lg:w-20'
+          src='./../assets/hero.png'
+          alt=''
+        />
         <div className='flex flex-col justify-between'>
-          <h1>title</h1>
-          <div className='flex flex-row gap-5'>
+          <h1 className='text-lg md:text-xl lg:text-2xl'>title</h1>
+          <div className='flex flex-row gap-1.5 md:gap-5 text-sm md:text-lg lg:text-xl'>
             <p className='text-green-500'>
               <ReactIconWithText icon={<FiDownload />} text={1000} />
             </p>

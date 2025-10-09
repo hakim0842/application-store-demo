@@ -1,27 +1,24 @@
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
-import ErrorImage from "./../assets/error-404.png";
+import AppErrorImage from "./../assets/App-Error.png";
 import { TiArrowBackOutline } from "react-icons/ti";
-import NavBar from "./../components/NavBar";
-import Footer from "../components/Footer";
 
-export default function ErrorPage() {
+export default function AppErrorPage() {
   const navigate = useNavigate();
 
   function goBack() {
-    navigate("/");
+    navigate("/apps");
   }
   return (
     <div className='bg-white text-black max-w-[1440px] mx-auto flex flex-col h-screen'>
-      <NavBar />
       <div className='flex justify-center items-center flex-1 bg-gray-100'>
         <div className='flex flex-col justify-center items-center p-2'>
-          <img src={ErrorImage} alt='Error image' />
+          <img src={AppErrorImage} alt='App Error Image' />
           <h1 className='font-semibold text-2xl md:text-3xl xl:text-5xl lg:text-4xl mt-4'>
-            Oops, page not found!
+            Oops, App not found!
           </h1>
           <p className='text-sm md:text-lg lg:text-xl mt-2 mb-8'>
-            The page you are looking for is not available.
+            The App you are looking for is not available.
           </p>
           <Button onClick={() => goBack()}>
             <span>Go Back</span>
@@ -31,7 +28,6 @@ export default function ErrorPage() {
           </Button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

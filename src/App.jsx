@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import InstallationPage from "./pages/InstallationPage";
 import { homeLoader, appLoader, instillationLoader } from "./services/loader";
 import Loader from "./components/Loader";
+import AppErrorPage from "./pages/AppErrorPage";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export default function App() {
           path: "installation",
           element: <InstallationPage />,
           loader: instillationLoader,
+        },
+        {
+          path: "apps/*",
+          element: <AppErrorPage />,
         },
       ],
     },

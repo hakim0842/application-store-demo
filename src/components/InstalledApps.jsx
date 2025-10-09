@@ -1,13 +1,14 @@
 import { FiDownload } from "react-icons/fi";
 import { TiStar } from "react-icons/ti";
 import ReactIconWithText from "./ReactIconWithText";
+import Logo from "./../assets/logo.png";
 export default function InstalledApps() {
   return (
-    <div className='flex flex-row justify-between mt-4 bg-white p-2 md:p-4 items-center'>
+    <div className='flex flex-row justify-between mt-4 bg-white p-2 md:p-4 items-center shadow-sm'>
       <div className='flex flex-row gap-5'>
         <img
           className='w-6 h-6 md:w-8 md:h-8 lg:h-20 lg:w-20'
-          src='./../assets/hero.png'
+          src={Logo}
           alt=''
         />
         <div className='flex flex-col justify-between'>

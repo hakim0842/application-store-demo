@@ -1,33 +1,38 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import MainLayout from "./layouts/MainLayout";
-import ErrorPage from "./pages/ErrorPage";
-import AppPage from "./pages/AppPage";
-import HomePage from "./pages/HomePage";
-import InstallationPage from "./pages/InstallationPage";
 import { homeLoader, appLoader, instillationLoader } from "./services/loader";
+import MainLayout from "./layouts/MainLayout";
 import Loader from "./components/Loader";
+import ErrorPage from "./pages/ErrorPage";
+import HomePage from "./pages/HomePage";
+import AppPage from "./pages/AppPage";
+import AppDetailsPage from "./pages/AppDetailsPage";
 import AppErrorPage from "./pages/AppErrorPage";
+import InstallationPage from "./pages/InstallationPage";
 
 export default function App() {
   const router = createBrowserRouter([
     {
-      element: <MainLayout />,
+      Component: MainLayout,
       errorElement: <ErrorPage />,
-      HydrateFallback: () => {
-        <Loader />;
-      },
-
+      HydrateFallback: () => <Loader />,
       children: [
-        { index: true, element: <HomePage />, loader: homeLoader },
-        { path: "apps", element: <AppPage />, loader: appLoader },
+        { index: true, Component: HomePage, loader: homeLoader },
         {
-          path: "installation",
-          element: <InstallationPage />,
-          loader: instillationLoader,
+          path: "apps",
+          Component: AppPage,
+          loader: appLoader,
+          children: [
+            {
+              path: ":id",
+              Component: AppDetailsPage,
+              errorElement: <AppErrorPage />,
+            },
+          ],
         },
         {
-          path: "apps/*",
-          element: <AppErrorPage />,
+          path: "installation",
+          Component: InstallationPage,
+          loader: instillationLoader,
         },
       ],
     },

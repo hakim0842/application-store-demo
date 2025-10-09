@@ -20,7 +20,7 @@ export default function AppDetailsPage() {
 
   return (
     <div className='px-7 md:px-15 lg:px-20 bg-gray-100 relative pb-8'>
-      <div className='absolute top-[.5%] left-[75%] sm:left-[80%]'>
+      <div className='absolute top-[7%] left-[75%] sm:left-[80%]'>
         <Button onClick={() => goBack()}>
           <span>Back</span>
           <span className='text-xl md:text-2xl lg:text-3xl xl:text-4xl'>

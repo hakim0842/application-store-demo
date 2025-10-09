@@ -12,7 +12,7 @@ export default function Footer() {
       <div className='flex flex-row justify-between items-center'>
         <Logo />
         <div>
-          <h1 className='text-xl font-medium mb-4 text-center'>Social Links</h1>
+          <h1 className='text-xl font-medium mb-4'>Social Links</h1>
           <div className='flex flex-row gap-3.5 justify-center items-center font-extrabold'>
             <a target='_blank' href='https://mail.google.com'>
               <TfiEmail className='hover:cursor-pointer' />

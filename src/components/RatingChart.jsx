@@ -19,8 +19,8 @@ export default function RatingChart({ ratings }) {
   const chartData = ratingsData.reverse();
 
   return (
-    <div className='w-full h-56 md:h-80 bg-gray-100  mt-10'>
-      <h2 className='text-lg font-semibold mb-4'>Ratings</h2>
+    <div className='w-full h-56 md:h-80 bg-gray-100'>
+      <h2 className='text-lg md:text-2xl font-semibold mb-4'>Ratings</h2>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           data={chartData}

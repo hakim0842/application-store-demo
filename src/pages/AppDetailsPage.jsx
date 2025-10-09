@@ -3,6 +3,7 @@ import RatingChart from "../components/RatingChart";
 import { TiArrowBackOutline } from "react-icons/ti";
 import AppDetailsHero from "../components/AppDetailsHero";
 import Button from "../components/Button";
+import AppDescription from "../components/AppDescription";
 
 export default function AppDetailsPage() {
   const data = useRouteLoaderData("apps");
@@ -28,8 +29,13 @@ export default function AppDetailsPage() {
         </Button>
       </div>
 
-      <AppDetailsHero {...appInfo} />
-      <RatingChart {...appInfo} />
+      <div className='flex flex-col gap-10'>
+        <AppDetailsHero {...appInfo} />
+        <hr className='text-gray-300' />
+        <RatingChart {...appInfo} />
+        <hr className='text-gray-300' />
+        <AppDescription {...appInfo} />
+      </div>
     </div>
   );
 }

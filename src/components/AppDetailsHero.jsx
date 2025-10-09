@@ -57,6 +57,7 @@ export default function AppDetailsHero({
               Developed by <span className='gradient-text'>{companyName}</span>
             </p>
           </div>
+          <hr className='text-gray-300' />
           <div className='flex flex-row gap-2 lg:gap-6'>
             <AppDetailsHeroOverviewImage
               icon={

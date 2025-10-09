@@ -1,19 +1,28 @@
+import { useEffect } from "react";
 import { FiDownload } from "react-icons/fi";
 import { TiStar } from "react-icons/ti";
 import { BiSolidLike } from "react-icons/bi";
 import AppDetailsHeroOverviewImage from "./AppDetailsHeroOverviewImage";
-import { useEffect } from "react";
-export default function AppDetailsHero({ image, title, companyName, size }) {
+import { installApp } from "./../utils/localStorage.js";
+export default function AppDetailsHero({
+  id,
+  image,
+  title,
+  companyName,
+  size,
+}) {
   useEffect(() => {
     if (title) {
       document.title = `${title} | App Details`;
     } else {
       document.title = "App Not Found";
     }
-    return () => {
-      document.title = "App Store Demo";
-    };
+    return () => (document.title = "App Store Demo");
   }, [title]);
+
+  function onInstall(id) {
+    installApp(id);
+  }
 
   return (
     <div className='flex flex-col lg:flex-row gap-5 md:gap-10 w-full mt-20'>
@@ -48,7 +57,10 @@ export default function AppDetailsHero({ image, title, companyName, size }) {
             count={80}
           />
         </div>
-        <button className='btn text-xl w-1/2 btn-ghost btn-primary text-white hover:text-black bg-green-400 border-0 btn-xs sm:btn-sm md:btn-md lg:btn-lg'>
+        <button
+          onClick={() => onInstall(id)}
+          className='btn text-xl w-1/2 btn-ghost btn-primary text-white hover:text-black bg-green-400 border-0 btn-xs sm:btn-sm md:btn-md lg:btn-lg'
+        >
           Install Now {`(${size})`}
         </button>
       </div>

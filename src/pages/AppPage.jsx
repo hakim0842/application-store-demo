@@ -25,9 +25,7 @@ export default function AppPage() {
       if (pathname === "/apps") {
         document.title = "All Apps";
       }
-      return () => {
-        document.title = "App Store Demo";
-      };
+      return () => (document.title = "App Store Demo");
     },
     [pathname]
   );

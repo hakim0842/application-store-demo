@@ -14,7 +14,7 @@ export default function AppOverview({
     <Link to={`/apps/${id}`}>
       <div className='shadow-sm bg-white p-4 flex flex-col gap-4 hover:cursor-pointer ease-in-out transition-all duration-300 hover:-translate-y-1.5 odd:hover:translate-x-0.5 even:hover:-translate-x-0.5 active:translate-0 hover:shadow-lg active:shadow-sm'>
         <img className='h-fit w-full' src={image} alt={title} />
-        <h1 className='text-start'>{title}</h1>
+        <h1 className='text-start font-semibold'>{title}</h1>
         <div className='flex flex-row justify-between'>
           <p className='text-green-500'>
             <ReactIconWithText icon={<FiDownload />} text={downloads} />

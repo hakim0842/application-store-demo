@@ -7,6 +7,10 @@ export default function AppDetailsPage() {
   const { id } = useParams();
   const appInfo = data.find((e) => parseInt(e.id) == parseInt(id));
 
+  if (!appInfo) {
+    throw new Response("App not Found!");
+  }
+
   return (
     <div className='px-7 md:px-15 lg:px-20 bg-gray-100'>
       <AppDetailsHero {...appInfo} />

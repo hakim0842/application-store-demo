@@ -40,7 +40,7 @@ export default function HomePage() {
             navigateAppsPage();
           }}
         >
-          Show All
+          Show All Apps
         </Button>
       </div>
     </div>

@@ -34,7 +34,7 @@ export default function AppPage() {
 
   if (id) {
     return (
-      <div className='flex-1'>
+      <div className='h-fit bg-gray-100'>
         <Outlet />
       </div>
     );

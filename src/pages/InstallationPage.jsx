@@ -3,7 +3,7 @@ import InstalledApps from "../components/InstalledApps";
 import { useEffect, useState } from "react";
 import { getInstalledApps, uninstallApp } from "../utils/localStorage";
 import Button from "../components/Button";
-
+import { ToastContainer, toast } from "react-toastify";
 export default function InstallationPage() {
   const data = useLoaderData();
   const navigate = useNavigate();
@@ -21,9 +21,10 @@ export default function InstallationPage() {
     [pathname]
   );
 
-  function onUninstall(id) {
+  function onUninstall(id, title) {
     uninstallApp(id);
     setInstalledApp(getInstalledApps);
+    toast(`Uninstall ${title}!`);
   }
 
   const allInstallApp = data.filter((item) => installedApp.includes(item.id));
@@ -48,7 +49,7 @@ export default function InstallationPage() {
   console.log(installedData);
 
   return (
-    <section className='my-8 md:mt-14 lg:mt-20 px-7 md:px-15 lg:px-20 bg-gray-100'>
+    <section className='mt-8 md:mt-14 lg:mt-20 px-7 md:px-15 lg:px-20 bg-gray-100 pb-10'>
       <h1 className='text-3xl md:text-5xl font-bold text-black  text-center'>
         Your Installed Apps
       </h1>
@@ -94,6 +95,7 @@ export default function InstallationPage() {
           </div>
         )}
       </div>
+      <ToastContainer />
     </section>
   );
 }

@@ -32,7 +32,7 @@ export default function InstalledApps({
         </div>
       </div>
       <button
-        onClick={() => onUninstall(id)}
+        onClick={() => onUninstall(id, title)}
         className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary flex items-center justify-center border-0 hover:text-white hover:btn-error transition-all duration-150 hover:-translate-y-0.5 active:translate-0 hover:shadow-lg active:shadow-sm'
       >
         Uninstall

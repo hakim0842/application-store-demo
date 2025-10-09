@@ -7,6 +7,8 @@ export function installApp(id) {
   if (!allInstalledApps.includes(id)) {
     const afterInstallNewApp = [...allInstalledApps, id];
     localStorage.setItem("apps", JSON.stringify(afterInstallNewApp));
+  } else {
+    return true;
   }
 }
 

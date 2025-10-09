@@ -89,7 +89,7 @@ export default function AppPage() {
             <kbd className='kbd kbd-sm text-white bg-gray-600'>K</kbd>
           </label>
         </div>
-        <div className='mt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4'>
+        <div className='mt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 pb-8'>
           {totalAppsData.length > 0 ? (
             totalAppsData.map((app) => <AppOverview key={app.id} {...app} />)
           ) : (

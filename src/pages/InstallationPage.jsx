@@ -1,9 +1,22 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useLocation } from "react-router";
 import InstalledApps from "../components/InstalledApps";
+import { useEffect } from "react";
 
 export default function InstallationPage() {
   const data = useLoaderData();
   const totalApps = data.length;
+  const { pathname } = useLocation();
+  useEffect(
+    function () {
+      if (pathname === "/installation") {
+        document.title = "installation";
+      }
+      return () => {
+        document.title = "App Store Demo";
+      };
+    },
+    [pathname]
+  );
   return (
     <section className='mt-8 md:mt-14 lg:mt-20 px-7 md:px-15 lg:px-20 bg-gray-100'>
       <h1 className='text-3xl md:text-5xl font-bold text-black  text-center'>

@@ -19,6 +19,7 @@ export default function App() {
         { index: true, Component: HomePage, loader: homeLoader },
         {
           path: "apps",
+          id: "apps",
           Component: AppPage,
           loader: appLoader,
           children: [

@@ -1,20 +1,55 @@
-import { Outlet, useLoaderData, useParams } from "react-router";
+import { Outlet, useLoaderData, useLocation, useParams } from "react-router";
 import AppOverview from "../components/AppOverview";
+import { useEffect, useRef, useState } from "react";
 
 export default function AppPage() {
+  const [queryData, setQueryData] = useState("");
   const data = useLoaderData();
-  const { id } = useParams();
+  const searchInput = useRef();
+  const { pathname } = useLocation();
 
-  const totalApps = data.length;
+  useEffect(() => {
+    function handleKeyDown(e) {
+      // check for Ctrl+K or Cmd+K
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        searchInput.current?.focus();
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(
+    function () {
+      if (pathname === "/apps") {
+        document.title = "All Apps";
+      }
+      return () => {
+        document.title = "App Store Demo";
+      };
+    },
+    [pathname]
+  );
+
+  const { id } = useParams();
 
   if (id) {
     return (
-      <div className='p-6'>
+      <div className='flex-1'>
         <Outlet />
       </div>
     );
   }
 
+  function filteredData() {
+    if (!queryData) return data;
+    return data.filter((item) =>
+      item.title.toLowerCase().includes(queryData.toLowerCase())
+    );
+  }
+  const totalAppsData = filteredData();
+  const totalApps = totalAppsData.length;
   return (
     <div>
       <section className='mt-8 md:mt-14 lg:mt-20 px-7 md:px-15 lg:px-20 text-center bg-gray-100'>
@@ -49,18 +84,23 @@ export default function AppPage() {
               type='search'
               className='grow text-sm md:text-xl lg:text-2xl'
               placeholder='Search'
+              onChange={(e) => setQueryData(e.target.value)}
+              ref={searchInput}
             />
             <kbd className='kbd kbd-sm text-white bg-gray-600'>⌘</kbd>
             <kbd className='kbd kbd-sm text-white bg-gray-600'>K</kbd>
           </label>
         </div>
         <div className='mt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4'>
-          {data.map((app) => (
-            <AppOverview key={app.id} {...app} />
-          ))}
+          {totalAppsData.length > 0 ? (
+            totalAppsData.map((app) => <AppOverview key={app.id} {...app} />)
+          ) : (
+            <p className='col-span-full text-3xl md:text-5xl font-bold text-gray-400 text-center mt-4'>
+              Apps Not Found!
+            </p>
+          )}
         </div>
       </section>
-      <Outlet />
     </div>
   );
 }

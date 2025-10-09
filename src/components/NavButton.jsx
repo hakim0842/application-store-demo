@@ -3,17 +3,19 @@ import { FaGithub } from "react-icons/fa";
 const githubLink = "https://github.com/devpolas/application-store-demo";
 export default function NavButton() {
   return (
-    <Button>
+    <div>
       <a
         className='flex flex-row w-full gap-2 items-center justify-center'
         href={githubLink}
         target='_blank'
       >
-        <span className='text-xl md:text-2xl lg:text-3xl xl:text-4xl'>
-          <FaGithub />
-        </span>
-        <span>Contribute</span>
+        <Button>
+          <span className='text-xl md:text-2xl lg:text-3xl xl:text-4xl'>
+            <FaGithub />
+          </span>
+          <span>Contribute</span>
+        </Button>
       </a>
-    </Button>
+    </div>
   );
 }

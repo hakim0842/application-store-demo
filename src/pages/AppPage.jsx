@@ -1,16 +1,27 @@
-import { Outlet, useLoaderData, useLocation, useParams } from "react-router";
-import AppOverview from "../components/AppOverview";
+import {
+  Outlet,
+  useLoaderData,
+  useLocation,
+  useNavigation,
+  useParams,
+} from "react-router";
 import { useEffect, useRef, useState } from "react";
+import AppOverview from "../components/AppOverview";
+import Loader from "./../components/Loader";
 
 export default function AppPage() {
   const [queryData, setQueryData] = useState("");
+  const [filteredApps, setFilteredApps] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const data = useLoaderData();
   const searchInput = useRef();
   const { pathname } = useLocation();
 
+  const navigation = useNavigation();
+  const isNavigation = navigation.state === "loading";
+
   useEffect(() => {
     function handleKeyDown(e) {
-      // check for Ctrl+K or Cmd+K
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         searchInput.current?.focus();
@@ -32,22 +43,46 @@ export default function AppPage() {
 
   const { id } = useParams();
 
+  useEffect(() => {
+    setIsLoading(true);
+    const dataDelay = setTimeout(() => {
+      if (!queryData) {
+        setFilteredApps(data);
+        setIsLoading(false);
+        return;
+      }
+    }, 400);
+
+    setIsLoading(true);
+
+    const delay = setTimeout(() => {
+      const result = data.filter((item) =>
+        item.title.toLowerCase().includes(queryData.toLowerCase())
+      );
+      setFilteredApps(result);
+      setIsLoading(false);
+    }, 400);
+
+    return () => {
+      clearTimeout(delay);
+      clearTimeout(dataDelay);
+    };
+  }, [queryData, data]);
+
   if (id) {
     return (
-      <div className='h-fit bg-gray-100'>
-        <Outlet />
-      </div>
+      <>
+        {isNavigation ? (
+          <Loader />
+        ) : (
+          <div className='h-fit bg-gray-100'>
+            <Outlet />
+          </div>
+        )}
+      </>
     );
   }
-
-  function filteredData() {
-    if (!queryData) return data;
-    return data.filter((item) =>
-      item.title.toLowerCase().includes(queryData.toLowerCase())
-    );
-  }
-  const totalAppsData = filteredData();
-  const totalApps = totalAppsData.length;
+  const totalApps = filteredApps.length;
   return (
     <div>
       <section className='mt-8 md:mt-14 lg:mt-20 px-7 md:px-15 lg:px-20 text-center bg-gray-100'>
@@ -90,8 +125,10 @@ export default function AppPage() {
           </label>
         </div>
         <div className='mt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4 pb-8'>
-          {totalAppsData.length > 0 ? (
-            totalAppsData.map((app) => <AppOverview key={app.id} {...app} />)
+          {isLoading ? (
+            <Loader />
+          ) : filteredApps.length > 0 ? (
+            filteredApps.map((app) => <AppOverview key={app.id} {...app} />)
           ) : (
             <p className='col-span-full text-3xl md:text-5xl font-bold text-gray-400 text-center mt-4'>
               Apps Not Found!

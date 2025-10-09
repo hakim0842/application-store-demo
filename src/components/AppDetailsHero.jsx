@@ -9,12 +9,16 @@ import {
   installApp,
   uninstallApp,
 } from "./../utils/localStorage.js";
+import { formatCount } from "../utils/format.js";
 export default function AppDetailsHero({
   id,
   image,
   title,
   companyName,
   size,
+  downloads,
+  reviews,
+  ratingAvg,
 }) {
   const [data, setData] = useState(getInstalledApps());
 
@@ -64,7 +68,7 @@ export default function AppDetailsHero({
                 <FiDownload className={`text-green-400 text-2xl md:text-4xl`} />
               }
               text='Downloads'
-              count={80}
+              count={formatCount(downloads)}
             />
 
             <AppDetailsHeroOverviewImage
@@ -72,7 +76,7 @@ export default function AppDetailsHero({
                 <TiStar className={`text-yellow-400 text-2xl md:text-4xl`} />
               }
               text='Average Ratings'
-              count={80}
+              count={ratingAvg}
             />
 
             <AppDetailsHeroOverviewImage
@@ -80,7 +84,7 @@ export default function AppDetailsHero({
                 <BiSolidLike className={`text-red-400 text-2xl md:text-4xl`} />
               }
               text='Total Reviews'
-              count={80}
+              count={formatCount(reviews)}
             />
           </div>
           <button
@@ -89,7 +93,7 @@ export default function AppDetailsHero({
             }
             className='btn text-sm lg:text-xl w-full md:w-1/2 xl:w-1/3 btn-ghost btn-primary text-white hover:text-black bg-green-400 border-0 btn-md lg:btn-lg'
           >
-            {isInstalled ? "Uninstall" : `Install Now (${size} MB)}`}
+            {isInstalled ? "Uninstall" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>

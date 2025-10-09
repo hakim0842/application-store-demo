@@ -1,6 +1,7 @@
 import { FiDownload } from "react-icons/fi";
 import { TiStar } from "react-icons/ti";
 import ReactIconWithText from "./ReactIconWithText";
+import { formatCount } from "../utils/format";
 export default function InstalledApps({
   id,
   image,
@@ -22,12 +23,15 @@ export default function InstalledApps({
           <h1 className='text-lg md:text-xl lg:text-2xl'>{title}</h1>
           <div className='flex flex-row gap-1.5 md:gap-5 text-sm md:text-lg lg:text-xl'>
             <p className='text-green-500'>
-              <ReactIconWithText icon={<FiDownload />} text={downloads} />
+              <ReactIconWithText
+                icon={<FiDownload />}
+                text={formatCount(downloads)}
+              />
             </p>
             <p className='text-orange-500'>
               <ReactIconWithText icon={<TiStar />} text={ratingAvg} />
             </p>
-            <h1>{size}</h1>
+            <h1>{size} MB</h1>
           </div>
         </div>
       </div>

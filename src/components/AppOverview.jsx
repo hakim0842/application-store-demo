@@ -2,6 +2,7 @@ import { FiDownload } from "react-icons/fi";
 import { TiStar } from "react-icons/ti";
 import ReactIconWithText from "./ReactIconWithText";
 import { Link } from "react-router";
+import { formatCount } from "../utils/format";
 
 export default function AppOverview({
   id,
@@ -17,7 +18,10 @@ export default function AppOverview({
         <h1 className='text-start font-semibold'>{title}</h1>
         <div className='flex flex-row justify-between'>
           <p className='text-green-500'>
-            <ReactIconWithText icon={<FiDownload />} text={downloads} />
+            <ReactIconWithText
+              icon={<FiDownload />}
+              text={formatCount(downloads)}
+            />
           </p>
           <p className='text-orange-500'>
             <ReactIconWithText icon={<TiStar />} text={ratingAvg} />

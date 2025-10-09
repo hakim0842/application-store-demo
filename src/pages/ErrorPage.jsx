@@ -12,9 +12,9 @@ export default function ErrorPage() {
     navigate("/");
   }
   return (
-    <div className='bg-white text-black max-w-[1440px] mx-auto'>
+    <div className='bg-white text-black max-w-[1440px] mx-auto flex flex-col h-screen'>
       <NavBar />
-      <div className='flex justify-center items-center h-screen bg-gray-100'>
+      <div className='flex justify-center items-center flex-1 bg-gray-100'>
         <div className='flex flex-col justify-center items-center p-2'>
           <img src={ErrorImage} alt='Error image' />
           <h1 className='font-semibold text-2xl md:text-3xl xl:text-5xl lg:text-4xl mt-4'>

@@ -7,10 +7,9 @@ export default function MainLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   return (
-    <main className='max-w-[1440px] mx-auto bg-gray-100 text-black h-screen'>
+    <main className='max-w-[1440px] mx-auto bg-gray-100 text-black h-screen flex flex-col'>
       <NavBar />
-      {isLoading && <Loader />}
-      <Outlet />
+      <div className='flex-1'>{isLoading ? <Loader /> : <Outlet />}</div>
       <Footer />
     </main>
   );

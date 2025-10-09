@@ -4,7 +4,7 @@ import ErrorPage from "./pages/ErrorPage";
 import AppPage from "./pages/AppPage";
 import HomePage from "./pages/HomePage";
 import InstallationPage from "./pages/InstallationPage";
-import { homeLoader, appLoader } from "./services/loader";
+import { homeLoader, appLoader, instillationLoader } from "./services/loader";
 import Loader from "./components/Loader";
 
 export default function App() {
@@ -19,7 +19,11 @@ export default function App() {
       children: [
         { index: true, element: <HomePage />, loader: homeLoader },
         { path: "apps", element: <AppPage />, loader: appLoader },
-        { path: "installation", element: <InstallationPage /> },
+        {
+          path: "installation",
+          element: <InstallationPage />,
+          loader: instillationLoader,
+        },
       ],
     },
   ]);

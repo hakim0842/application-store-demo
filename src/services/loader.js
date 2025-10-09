@@ -8,3 +8,8 @@ export async function appLoader() {
   const data = await fetchData();
   return data;
 }
+
+export async function instillationLoader() {
+  const data = await fetchData();
+  return data;
+}

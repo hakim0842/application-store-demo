@@ -5,10 +5,8 @@ import AppOverview from "../components/AppOverview";
 import Button from "./../components/Button";
 export default function HomePage() {
   const data = useLoaderData();
-  console.log(data);
   const sortedData = data.sort((a, b) => b.ratingAvg - a.ratingAvg);
   const trendingApps = sortedData.slice(0, 12);
-  console.log(trendingApps);
 
   const navigate = useNavigate();
   function navigateAppsPage() {

